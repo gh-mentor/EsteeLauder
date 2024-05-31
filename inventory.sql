@@ -82,18 +82,6 @@ BEGIN
     DROP PROCEDURE GetProductsByCategory;
 END;
 
-CREATE PROCEDURE GetProductsByCategory
-    @CategoryName NVARCHAR(50)
-AS
-BEGIN
-    SELECT p.ProductID, p.ProductName, p.Price
-    FROM Products p
-    JOIN Categories c ON p.CategoryID = c.CategoryID
-    WHERE c.CategoryName = @CategoryName;
-END;
-
--- Print a success message
-PRINT 'Inventory database setup completed successfully.';
 
 
 
